@@ -45,7 +45,7 @@ def extract_text_from_pdf(pdf_file):
 
 def partition_text(text):
     # Partition the extracted text into sections based on paragraphs
-    sections = text.split('\n')  # Split on sentences (you can adjust this)
+    sections = text.split('.')  # Split on sentences (you can adjust this)
     return [section.strip() for section in sections if section.strip()]  # Clean empty sections
 
 def get_similar_articles(q, df, top_results):
