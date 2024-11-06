@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a; /* Dark background */
+            color: #ffffff; /* Light text */
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #00aaff; /* Light blue color */
+        }
+        ul {
+            list-style-type: none; /* Remove bullet points */
+            padding: 0;
+        }
+        li {
+            background: #2a2a2a; /* Slightly lighter dark background */
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        strong {
+            color: #00aaff; /* Light blue for titles */
+        }
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #00aaff; /* Light blue link */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Similar Articles</h1>
+    <ul>
+        {% for title, document, score in similar_articles %}
+            <li>
+                <strong>{{ title }}</strong><br>
+                <p>{{ document }}</p>
+                <p>Similarity Score: {{ score }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="/">Upload another document</a>
+</body>
+</html>

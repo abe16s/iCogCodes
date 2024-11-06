@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Upload PDF</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a; /* Dark background */
+            color: #ffffff; /* Light text */
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #00aaff; /* Light blue color */
+        }
+        form {
+            max-width: 400px;
+            margin: auto;
+            background: #2a2a2a; /* Slightly lighter dark background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        input[type="file"], input[type="text"], input[type="number"], input[type="submit"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 4px;
+        }
+        input[type="file"] {
+            background: #333;
+            color: #ffffff;
+        }
+        input[type="text"], input[type="number"] {
+            background: #444;
+            color: #ffffff;
+        }
+        input[type="submit"] {
+            background-color: #00aaff; /* Light blue color */
+            color: #ffffff;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0088cc; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload a PDF Document</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".pdf" required>
+        <br>
+        <label for="query">Query Words:</label>
+        <input type="text" name="query" required>
+        <br>
+        <label for="top_results">Number of Results:</label>
+        <input type="number" name="top_results" min="1" required>
+        <br>
+        <input type="submit" value="Upload">
+    </form>
+</body>
+</html>
