@@ -1,8 +1,11 @@
 import requests
 import json
+from dotenv import load_dotenv
+import os
 
 GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent"
-GEMINI_API_KEY = "your_gemini_api_key"  # Replace with your actual API key
+load_dotenv()
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 def generate_message(mood):
     headers = {

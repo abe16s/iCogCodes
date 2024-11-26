@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Review Results</title>
+</head>
+<body>
+    <h1>Document Review Results</h1>
+
+    <h2>Key Clauses:</h2>
+    <ul>
+        {% for clause in analysis['key_clauses'] %}
+            <li>{{ clause }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Risky Clauses Detected:</h2>
+    <ul>
+        {% for clause in analysis['risky_clauses'] %}
+            <li>{{ clause }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Full Document Text:</h3>
+    <pre>{{ analysis['full_text'] }}</pre>
+
+    <br>
+    <a href="/">Go back to the main page</a>
+</body>
+</html>

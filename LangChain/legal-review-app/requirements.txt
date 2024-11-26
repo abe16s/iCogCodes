@@ -1,0 +1,6 @@
+langchain
+openai
+requests
+PyPDF2
+pdfplumber
+flask 
